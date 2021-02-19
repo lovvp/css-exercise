@@ -15,6 +15,7 @@
 	--color-orange: #feb546;
 	--color-black: #000000;
 	--color-green: #00251a;
+	--color-light-green: #ffffa6;
 
 	/* Font size */
 	--font-large: 48px;
@@ -40,8 +41,19 @@
 * {
 	box-sizing: border-box;
 }
-
+body {
+	margin: 0px;
+}
 /* Typography */
+a {
+	text-decoration: none;
+	color: white;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
 
 h1 {
 	font-size: var(--font-large);
@@ -69,4 +81,43 @@ p {
 	font-weight: var(--weight-regular);
 	color: var(--color-black);
 	margin: 4px 0;
+}
+#navbar {
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--color-light-green);
+	align-items: center;
+	font-family: "Nanum Gothic", sans-serif;
+	padding: 16px;
+}
+
+.navbar__logo {
+	font-size: var(--font-medium);
+	font-weight: var(--weight-regular);
+}
+.navbar__logo a {
+	color: var(--color-black);
+	font-weight: var(--weight-boldf);
+}
+#navbar i {
+	color: green;
+}
+.navbar__memu {
+	display: flex;
+}
+.navbar__menu__items {
+	padding: 8px 12px;
+	margin: 0px 4px;
+	color: var(--color-black);
+	cursor: pointer;
+}
+.navbar__menu__items:active {
+	border: 1px solid var(--color-black);
+	border-radius: 4px;
+}
+.navbar__menu__items:hover {
+	background-color: var(--color-green);
+	border-radius: 4px;
+	color: var(--color-white);
+	font-weight: var(--weight-bold);
 }
