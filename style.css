@@ -121,3 +121,38 @@ p {
 	color: var(--color-white);
 	font-weight: var(--weight-bold);
 }
+
+/* home */
+
+#home {
+	background: url(imgs/webbg.png) center/cover;
+	text-align: center;
+}
+#home img {
+	width: 300px;
+	margin: 24px;
+}
+#home h1 {
+	margin: 24px;
+}
+#home h2 {
+	margin: 24px;
+}
+#home button {
+	margin: 24px;
+	padding: 5px 10px;
+	font-size: var(--font-regular);
+	background: none;
+	border: var(--color-green) 1px solid;
+	outline: none;
+	cursor: pointer;
+	border-radius: 4px;
+	font-weight: var(--weight-bold);
+}
+
+#home button:hover {
+	background: var(--color-green);
+	color: var(--color-white);
+	transition: ease-in-out 500ms;
+	font-weight: var(--weight-bold);
+}
