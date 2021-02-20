@@ -15,7 +15,7 @@
 	--color-orange: #feb546;
 	--color-black: #000000;
 	--color-green: #00251a;
-	--color-light-green: #ffffa6;
+	--color-light-green: #e1f5d1;
 
 	/* Font size */
 	--font-large: 48px;
@@ -382,4 +382,46 @@ p {
 	margin-top: 8px;
 
 	background-color: var(--color-dark-white);
+}
+
+#testimonials {
+	background-color: var(--color-light-green);
+}
+.testimonials {
+	margin: 40px;
+}
+.testimonial {
+	display: flex;
+	margin: 32px 0;
+}
+/* 한줄에 다 나오게 하고 싶을 때 플렉스 박스를 씀 */
+.testimonial__avatar {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+}
+.testimonial__avatar:nth-child(odd) {
+	margin-right: 40px;
+}
+.testimonial__avatar:nth-child(even) {
+	margin-left: 40px;
+}
+
+.testimonial__speech-bubble {
+	padding: 18px;
+	background-color: var(--color-white);
+	border-radius: var(--size-border-radius);
+}
+
+.testimonial__speech-bubble p {
+	color: var(--color-light-grey);
+}
+.testimonial__speech-bubble a {
+	color: green;
+	font-weight: bold;
+}
+
+#contact a {
+	color: black;
+	font-size: 30px;
 }
