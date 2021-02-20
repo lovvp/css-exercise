@@ -59,7 +59,6 @@ h1 {
 	font-size: var(--font-large);
 	font-weight: var(--weight-bold);
 	color: var(--color-black);
-	margin: 16px 0px;
 }
 
 h2 {
@@ -385,7 +384,7 @@ p {
 }
 
 #testimonials {
-	background-color: var(--color-light-green);
+	background-color: whitesmoke;
 }
 .testimonials {
 	margin: 40px;
@@ -420,8 +419,33 @@ p {
 	color: green;
 	font-weight: bold;
 }
-
+#contact {
+	background-color: var(--color-light-green);
+}
 #contact a {
 	color: black;
-	font-size: 30px;
+	font-size: 45px;
+}
+
+#contact i {
+	transition: ease var(--animation-duration);
+}
+#contact i:hover {
+	transform: scale(1.1);
+	color: plum;
+}
+.contact__title,
+.contact__email,
+.contact__rights {
+	color: var(--color-black);
+}
+
+.contact__title {
+	margin: 32px;
+}
+.contact__links {
+	margin-top: 32px;
+}
+.contact__rights {
+	margin-top: 32px;
 }
