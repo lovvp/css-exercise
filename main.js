@@ -52,3 +52,19 @@ document.addEventListener("scroll", () => {
 	console.log(home.getBoundingClientRect().height);
 	home.style.opacity = 1 - window.scrollY / homeHeight;
 });
+
+const arrowUp = document.querySelector(".arrow-up");
+
+//Show "arrow up" button when scrolling down
+document.addEventListener("scroll", () => {
+	if (window.scrollY > homeHeight / 2) {
+		arrowUp.classList.add("visible");
+	} else {
+		arrowUp.classList.remove("visible");
+	}
+});
+
+arrowUp.addEventListener("click", () => {
+	const home = document.querySelector("#home");
+	home.scrollIntoView({ behavior: "smooth" });
+});

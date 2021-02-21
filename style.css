@@ -174,12 +174,6 @@ p {
 	transition: ease-in-out 300ms;
 	font-weight: var(--weight-bold);
 }
-.home--opacity--50 {
-	opacity: 0.7;
-}
-.home--opacity--0 {
-	opacity: 0.5;
-}
 
 /* Section Common */
 .section {
@@ -474,6 +468,31 @@ p {
 .contact__rights {
 	margin-top: 32px;
 }
+/* scroll button */
+.arrow-up {
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	width: 70px;
+	height: 70px;
+	font-size: 50px;
+	color: whitesmoke;
+	background-color: green;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	outline: none;
+	opacity: 0;
+	pointer-events: none;
+	transition: all var(--animation-duration);
+}
+/* 없는 상태에서 애니메이션을 주지 못함 opacity를 주는것이좋음 */
+/* pointer events를 none하면 클릭자체가 안됨 */
+.arrow-up.visible {
+	opacity: 1;
+	pointer-events: auto;
+}
+
 /* For below 768px screen width */
 /* 최소한의 정보 즉 차이점만 들어가야한다 */
 @media screen and (max-width: 768px) {
