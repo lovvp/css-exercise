@@ -19,8 +19,11 @@ document.addEventListener("scroll", () => {
 	}
 });
 
-//Handle scrolling when tapping on the navbar menu
+//Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
 const navbarMenu = document.querySelector(".navbar__menu");
+
+//Handle scrolling when tapping on the navbar menu
 navbarMenu.addEventListener("click", (e) => {
 	const target = e.target;
 	const link = target.dataset.link;
@@ -28,6 +31,11 @@ navbarMenu.addEventListener("click", (e) => {
 		return;
 	}
 	scrollIntoView(link);
+	navbarMenu.classList.remove("open");
+});
+
+navbarToggleBtn.addEventListener("click", () => {
+	navbarMenu.classList.toggle("open");
 });
 
 const contact = document.querySelector(".home__contact");
