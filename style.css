@@ -149,7 +149,7 @@ p {
 	padding-top: 100px;
 }
 #home img {
-	width: 300px;
+	width: 250px;
 	margin: 24px;
 }
 #home h1 {
@@ -315,6 +315,7 @@ p {
 	font-size: var(--font-regular);
 	padding: 8px 48px;
 	outline: none;
+	position: relative;
 }
 .category__count {
 	background-color: var(--color-orange);
@@ -323,9 +324,9 @@ p {
 	width: 24px;
 	height: 24px;
 	line-height: 24px;
-	position: relative;
+	position: absolute;
 	top: -20px;
-	left: 4px;
+	right: 16px;
 	opacity: 0;
 	transition: all var(--animation-duration) ease-in;
 	display: inline-block;
@@ -335,7 +336,7 @@ p {
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
 	opacity: 1;
-	top: 0;
+	top: 5px;
 }
 
 /* transition 적극활용 */
@@ -513,9 +514,34 @@ p {
 /* For below 768px screen width */
 /* 최소한의 정보 즉 차이점만 들어가야한다 */
 @media screen and (max-width: 768px) {
+	:root {
+		/* 미디어안에 들어왔을 때 우리가 전역으로 작성한 위에 클래스를 그대로 가져오기때문에
+		root파일을 미디어쿼리 안에서 root를 다시 설정해주면 바뀌는것을 알수 잇음 */
+		/* Font size */
+		--font-large: 30px;
+		--font-medium: 18px;
+		--font-regular: 16px;
+		--font-small: 14px;
+		--font-micro: 12px;
+	}
+	button {
+		background-color: transparent;
+		cursor: pointer;
+		border: none;
+		outline: none;
+		padding: 0;
+	}
+	.navbar__toggle-btn {
+		display: block;
+		top: 16px;
+		right: 16px;
+		font-size: var(--font-medium);
+	}
+
 	.navbar__toggle-btn {
 		display: block;
 	}
+	/* 모바일의 패딩은 16px추천 */
 	#navbar {
 		flex-direction: column;
 		align-items: flex-start;
@@ -526,9 +552,16 @@ p {
 		text-align: center;
 		display: none;
 	}
+
+	.section {
+		padding: 50px;
+	}
 	.about__majors {
 		flex-direction: column;
+		margin-top: 30px;
+		margin-bottom: 0px;
 	}
+
 	.major {
 		margin-bottom: 30px;
 	}
@@ -543,16 +576,43 @@ p {
 	.category__btn {
 		margin-bottom: 10px;
 	}
+	.category__btn.selected .category__count,
+	.category__btn:hover .category__count {
+		opacity: 1;
+		right: 15%;
+		top: 5px;
+	}
 	.project {
 		flex-grow: 1;
 	}
+	.testimonial {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 	.testimonial__avatar {
-		width: 80px;
-		height: 80px;
+		width: 120px;
+		height: 120px;
+	}
+
+	.testimonial__avatar:nth-child(even),
+	.testimonial__avatar:nth-child(odd) {
+		margin: 10px 0px;
+	}
+	.testimonial__speech-bubble {
+		order: 1;
 	}
 	.navbar__menu.open {
 		background: #b3df61;
 		display: block;
 		z-index: 3;
+	}
+	.arrow-up {
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		font-size: 25px;
+		bottom: 15px;
+		right: 20px;
 	}
 }
