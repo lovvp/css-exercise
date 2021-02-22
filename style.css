@@ -122,6 +122,10 @@ p {
 	border-radius: 4px;
 }
 
+.navbar__menu__items.active {
+	border: 1px solid var(--color-black);
+}
+
 .navbar__menu__items:hover {
 	background-color: var(--color-green);
 
