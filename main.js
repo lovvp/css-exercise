@@ -43,13 +43,11 @@ const scrollIntoView = (selectors) => {
 
 const home = document.querySelector("#home");
 const homeHeight = home.getBoundingClientRect().height;
-document.addEventListener("scroll", () => {
-	console.log(homeHeight);
-});
+document.addEventListener("scroll", () => {});
 
 document.addEventListener("scroll", () => {
 	const home = document.querySelector(".home__container");
-	console.log(home.getBoundingClientRect().height);
+
 	home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
@@ -62,6 +60,36 @@ document.addEventListener("scroll", () => {
 	} else {
 		arrowUp.classList.remove("visible");
 	}
+});
+
+//projects
+const workBtnContainer = document.querySelector(".work__cartegories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project"); //배열 형태로 받아짐
+
+workBtnContainer.addEventListener("click", (e) => {
+	const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+	if (filter == null) {
+		return;
+	}
+	//Remove selection from the previous item and select the
+	const active = document.querySelector(".category__btn.selected");
+	active.classList.remove("selected");
+	const target =
+		e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
+	target.classList.add("selected");
+	projectContainer.classList.add("anim-out");
+	setTimeout(() => {
+		projects.forEach((project) => {
+			console.log(project.dataset.type);
+			if (filter === "*" || filter === project.dataset.type) {
+				project.classList.remove("invisible");
+			} else {
+				project.classList.add("invisible");
+			}
+		});
+		projectContainer.classList.remove("anim-out");
+	}, 300);
 });
 
 arrowUp.addEventListener("click", () => {
