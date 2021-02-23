@@ -101,12 +101,12 @@ p {
 	font-size: var(--font-medium);
 	font-weight: var(--weight-regular);
 }
-.navbar__logo a {
+.navbar__logo__name {
 	color: var(--color-black);
 	font-weight: var(--weight-bold);
 }
 #navbar i {
-	color: green;
+	color: var(--color-blue);
 }
 .navbar__menu {
 	display: flex;
