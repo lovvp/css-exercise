@@ -104,6 +104,7 @@ p {
 .navbar__logo__name {
 	color: var(--color-black);
 	font-weight: var(--weight-bold);
+	display: inline-block;
 }
 #navbar i {
 	color: var(--color-blue);
